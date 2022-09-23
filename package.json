@@ -2,10 +2,19 @@
   "name": "@appjusto/opendelivery-types",
   "version": "0.1.0",
   "description": "Types for Open Delivery",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npm version ${VERSION:-patch} && npm publish --access public",
+    "postversion": "git push && git push --tags && git fetch"
   },
   "author": "AppJusto",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/appjusto/opendelivery-types.git"
+  }
 }
