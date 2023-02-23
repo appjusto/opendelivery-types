@@ -7,3 +7,18 @@ import { GetEventsPoolingResponse } from './polling';
  * POST /v1/orderUpdate (or /v1/newEvent?)
  */
 export type OrderUpdateRequest = GetEventsPoolingResponse;
+
+export interface OrderUpdateStatusRequest {
+  orderId: string;
+}
+
+export interface OrderUpdateStatusConfirmRequest
+  extends OrderUpdateStatusRequest {
+  reason?: string;
+  createdAt: string;
+  orderExternalCode: string;
+  /*
+   * Indicates an estimate of the preparation time (in minutes) for the order being confirmed.
+   */
+  preparationTime: number;
+}

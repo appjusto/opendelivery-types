@@ -15,6 +15,32 @@ export type PaymentMethod =
   | 'PREPAID_REDEEM'
   | 'OTHER';
 
+export type PaymentBrand =
+  | 'VISA'
+  | 'MASTERCARD'
+  | 'DINERS'
+  | 'AMEX'
+  | 'HIPERCARD'
+  | 'ELO'
+  | 'AURA'
+  | 'DISCOVER'
+  | 'VR_BENEFICIOS'
+  | 'SODEXO'
+  | 'TICKET'
+  | 'GOOD_CARD'
+  | 'BANESCARD'
+  | 'SOROCARD'
+  | 'POLICARD'
+  | 'VALECARD'
+  | 'AGICARD'
+  | 'JCB'
+  | 'CREDSYSTEM'
+  | 'CABAL'
+  | 'GREEN_CARD'
+  | 'VEROCHEQUE'
+  | 'AVISTA'
+  | 'OTHER';
+
 export interface OrderPaymentMethod extends Price {
   /**
    * PREPAID if the payment was made through some platform, or PENDING if it going to be paid on delivery or in cash, for example.
@@ -25,7 +51,7 @@ export interface OrderPaymentMethod extends Price {
    * method
    */
   method: PaymentMethod;
-
+  brand?: PaymentBrand;
   /**
    * Additional information regarding the payment method.
    * It can be used to indicate some useful information of the chosen payment method, such as the name of the wallet, the card brand or an authorization number.

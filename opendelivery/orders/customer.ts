@@ -1,4 +1,4 @@
-export interface Customer {
+export interface OrderCustomer {
   /**
    * A unique identifier related to the consumer. If the Ordering Application does not have an Id for the customer, this Id can be generated when creating the order.
    */
