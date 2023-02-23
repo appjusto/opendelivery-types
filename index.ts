@@ -5,7 +5,10 @@ export {
   MerchantAddress,
   MerchantBasicInfo,
 } from './opendelivery/merchant/basic-info';
-export { MerchantCategory } from './opendelivery/merchant/category';
+export {
+  MerchantCategory,
+  MerchantCategoryData,
+} from './opendelivery/merchant/category';
 export { Image } from './opendelivery/merchant/image';
 export { Menu } from './opendelivery/merchant/menu';
 export { Availability } from './opendelivery/merchant/menu/availability';
@@ -18,10 +21,13 @@ export {
 } from './opendelivery/merchant/menu/item/nutritional-info';
 export { Option, OptionGroup } from './opendelivery/merchant/menu/option';
 export {
+  GetMerchantResponse,
+  GetMerchantStatusResponse,
+} from './opendelivery/merchant/payloads/get';
+export {
   PutMerchantOnboardingRequest,
   PutMerchantOnboardingResponse,
 } from './opendelivery/merchant/payloads/onboarding';
-export { GetMerchantStatusResponse } from './opendelivery/merchant/payloads/status';
 export {
   MerchantUpdateAvailabilityRequest,
   MerchantUpdateCategoryRequest,

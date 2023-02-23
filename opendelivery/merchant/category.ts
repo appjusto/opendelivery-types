@@ -1,3 +1,6 @@
+import { Image } from './image';
+import { Status } from './status';
+
 export type MerchantCategory =
   | 'BURGERS'
   | 'PIZZA'
@@ -44,3 +47,15 @@ export type MerchantCategory =
   | 'ARGENTINIAN'
   | 'PREMIUM'
   | 'AFFORDABLE_MEALS';
+
+export interface MerchantCategoryData {
+  id: string;
+  index: number;
+  name: string;
+  description?: string;
+  image: Image;
+  externalCode: string;
+  status: Status;
+  availabilityId: string;
+  itemOfferId: string[];
+}

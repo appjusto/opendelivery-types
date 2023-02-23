@@ -1,3 +1,9 @@
+import { Merchant } from '..';
+import { MerchantCategoryData } from '../category';
+import { Availability } from '../menu/availability';
+import { Item, ItemOffer } from '../menu/item';
+import { OptionGroup } from '../menu/option';
+
 /**
  * Get specific merchant info reading status provided by the Ordering Application.
  * GET /v1/merchantStatus?merchantId=
@@ -24,4 +30,12 @@ export interface GetMerchantStatusResponse {
    * Open field to provide any relevant information to the caller. Eg: Error messages or causes.
    */
   moreInfo?: string;
+}
+
+export interface GetMerchantResponse extends Merchant {
+  categories: MerchantCategoryData[];
+  itemOffers: ItemOffer[];
+  items: Item[];
+  optionGroups?: OptionGroup[];
+  availabilities?: Availability[];
 }
