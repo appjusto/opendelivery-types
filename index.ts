@@ -29,18 +29,9 @@ export {
   PutMerchantOnboardingResponse,
 } from './opendelivery/merchant/payloads/onboarding';
 export {
-  MerchantUpdateAvailabilityRequest,
-  MerchantUpdateCategoryRequest,
-  MerchantUpdateEmptyRequest,
-  MerchantUpdateEntityBaseRequest,
-  MerchantUpdateItemOfferRequest,
-  MerchantUpdateItemRequest,
-  MerchantUpdateMenuRequest,
-  MerchantUpdateOptionGroupRequest,
-  MerchantUpdateOptionRequest,
+  MerchantUpdatedObjects,
+  MerchantUpdateEntityType,
   MerchantUpdateRequest,
-  MerchantUpdateServiceRequest,
-  MerchantUpdateStatusRequest,
 } from './opendelivery/merchant/payloads/update';
 export {
   Service,
