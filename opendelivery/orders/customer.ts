@@ -7,12 +7,15 @@ export interface OrderCustomer {
   /**
    * Customer's phone. Here you can enter the customer's phone number directly (provided that the customer has given permission for this data to be shared, according to local policies) or another phone number (such as the ordering application's call center phone number) where the merchant can communicate about order issues that affect the customer (such as health issues).
    */
-  phone: string;
+  phone: {
+    number: string;
+    extension?: string;
+  };
 
   /**
    * Customer document. This document is mandatory for dealing with tax issues.
    */
-  documentNumber: number;
+  documentNumber: string;
 
   /**
    * Customer's name.

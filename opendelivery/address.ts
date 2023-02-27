@@ -28,7 +28,7 @@ export interface Address {
   /**
    * Street Number.
    */
-  number: number;
+  number: string;
 
   /**
    * Postal Code.
