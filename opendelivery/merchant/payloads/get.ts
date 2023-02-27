@@ -1,8 +1,4 @@
 import { Merchant } from '..';
-import { MerchantCategoryData } from '../category';
-import { Availability } from '../menu/availability';
-import { Item, ItemOffer } from '../menu/item';
-import { OptionGroup } from '../menu/option';
 
 /**
  * Get specific merchant info reading status provided by the Ordering Application.
@@ -33,9 +29,14 @@ export interface GetMerchantStatusResponse {
 }
 
 export interface GetMerchantResponse extends Merchant {
-  categories: MerchantCategoryData[];
-  itemOffers: ItemOffer[];
-  items: Item[];
-  optionGroups?: OptionGroup[];
-  availabilities?: Availability[];
+  /**
+   * The last modified date and time.
+   * This should be used in conjuction of the TTL field to update the information on the ordering aplication.
+   * (UTC date-time in ISO timestamp format).
+   */
+  lastUpdate: string;
+
+  /**
+   * Time to Live (in seconds). Min: 500 Max: 86400. A new request must be done when the TTL expires.*/
+  TTL: string;
 }

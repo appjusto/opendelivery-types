@@ -1,5 +1,9 @@
 import { MerchantBasicInfo } from './basic-info';
+import { MerchantCategoryData } from './category';
 import { Menu } from './menu';
+import { Availability } from './menu/availability';
+import { Item, ItemOffer } from './menu/item';
+import { OptionGroup } from './menu/option';
 import { Service } from './service';
 import { Status } from './status';
 
@@ -20,17 +24,6 @@ export type EntityType =
  * /v1/merchant
  */
 export interface Merchant {
-  /**
-   * The last modified date and time.
-   * This should be used in conjuction of the TTL field to update the information on the ordering aplication.
-   * (UTC date-time in ISO timestamp format).
-   */
-  lastUpdate: string;
-
-  /**
-   * Time to Live (in seconds). Min: 500 Max: 86400. A new request must be done when the TTL expires.*/
-  TTL: string;
-
   /**
    * [ 36 .. 100 ] characters
    * Unique Identifier. Must be formatted with Merchant Document + UUID
@@ -55,7 +48,27 @@ export interface Merchant {
   services: Service[];
 
   /**
-   *
+   * Describes an array of menus.
    */
   menus: Menu[];
+  /**
+   * Describes an array of sections in the menu where ItemOffers will be showed.
+   */
+  categories: MerchantCategoryData[];
+  /**
+   * Describes an array of offers for the Items.
+   */
+  itemOffers: ItemOffer[];
+  /**
+   * Describes an array of items. To be used with an ItemOffer or an Option.
+   */
+  items: Item[];
+  /**
+   * Describes additional options of an ItemOffer.
+   */
+  optionGroups: OptionGroup[];
+  /**
+   * Describes the time period during which a Category or an ItemOffer entity is served.
+   */
+  availabilities: Availability[];
 }

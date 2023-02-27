@@ -1,3 +1,4 @@
+import { Merchant } from '..';
 import { Menu } from '../menu';
 import { Category } from '../menu/category';
 import { Item, ItemOffer } from '../menu/item';
@@ -18,6 +19,7 @@ export type MerchantUpdateEntityType =
   | 'AVAILABILITY';
 
 export type MerchantUpdatedObjects =
+  | Merchant[]
   | Option[]
   | OptionGroup[]
   | ItemOffer[]
