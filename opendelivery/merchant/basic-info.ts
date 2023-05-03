@@ -1,5 +1,6 @@
 import { Address } from '../address';
 import { LatLng } from '../location';
+import { PaymentBrand } from '../orders/payment';
 import { Price } from '../price';
 import { MerchantCategory } from './category';
 import { Image } from './image';
@@ -87,6 +88,10 @@ export interface MerchantBasicInfo {
    * (UTC date-time in ISO timestamp format).
    */
   createdAt: string;
+  /**
+   * Indicates which card brands are accepted by the merchant.
+   */
+  acceptedCards?: PaymentBrand;
 }
 
 export interface MerchantAddress extends Address, LatLng {}

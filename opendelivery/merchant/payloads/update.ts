@@ -1,4 +1,5 @@
 import { Merchant } from '..';
+import { MerchantBasicInfo } from '../basic-info';
 import { Menu } from '../menu';
 import { Category } from '../menu/category';
 import { Item, ItemOffer } from '../menu/item';
@@ -20,6 +21,7 @@ export type MerchantUpdateEntityType =
 
 export type MerchantUpdatedObjects =
   | Merchant[]
+  | MerchantBasicInfo[]
   | Option[]
   | OptionGroup[]
   | ItemOffer[]
